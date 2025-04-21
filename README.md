@@ -1,4 +1,4 @@
-# 🧮 Calculadora Binaria
+# 🧮 Validador de cálculos Binarios
 
 Trabajo integrador de Matemática y Programación - Python  
 Comisión: 18
@@ -15,7 +15,7 @@ Comisión: 18
 
 ## 🎯 Descripción del proyecto
 
-Este trabajo integrador tiene como objetivo el desarrollo de una **Calculadora Binaria** utilizando Python. El proyecto combina conceptos matemáticos relacionados con el **sistema de numeración binario** y su aplicación en programación. A través del uso de funciones, estructuras de control y lógica binaria, la calculadora permite realizar distintas operaciones aritméticas y lógicas entre números binarios.
+Este trabajo integrador tiene como objetivo el desarrollo de una **Validador de calculos binarios** utilizando Python. El proyecto combina conceptos matemáticos relacionados con el **sistema de numeración binario** y su aplicación en programación. A través del uso de funciones, estructuras de control y lógica binaria, la calculadora permite realizar distintas operaciones aritméticas y lógicas entre números binarios.
 
 Cada integrante del grupo tiene asignada una parte específica del desarrollo, la cual será explicada y presentada en un video.
 
