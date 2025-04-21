@@ -1,7 +1,7 @@
 # 🧮 Calculadora Binaria
 
 Trabajo integrador de Matemática y Programación - Python  
-Comisión: [Agregar número o docente si aplica]
+Comisión: 18
 
 ## 👥 Integrantes
 
