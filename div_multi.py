@@ -17,7 +17,7 @@ def multiplicacion_binaria (bin1: str, bin2: str):
     """
     dec1 = int(binario_a_decimal(bin1))
     dec2 = int(binario_a_decimal(bin2))
-    return str(dec1*dec2)
+    return decimal_a_binario(dec1*dec2)
 
 # División binaria 
 
@@ -39,6 +39,6 @@ def division_binaria(bin1: str, bin2: str):
     dec1 = int(binario_a_decimal(bin1))
     dec2 = int(binario_a_decimal(bin2))
     if dec2 != 0 :
-        return str(dec1//dec2)
+        return decimal_a_binario(dec1//dec2)
     else:
         return (f"ERROR: no se puede dividir por cero.")
