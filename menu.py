@@ -89,6 +89,8 @@ def operacion_a_texto(opcion):
         return "Multiplicacion"
     elif (opcion == 4):
         return "Division"
+    elif (opcion == 5):
+        return "Fin del programa"
     else:
         return "Error. Usted ingresó una opción no válida."
 
@@ -110,8 +112,8 @@ def menu_operacion(texto_operacion: str):
         texto_operacion = operacion_a_texto(opcion)
         
         #Si la opción ingresada está dentro de las posibles 
-        if opcion in opciones_validas:
-                
+        if opcion in opciones_validas and opcion != 5:
+                # cuadro_colorido(texto_operacion, colorama.Fore.GREEN) #Pongo en un cuadro la opción elegida
                 #Solicito los binarios a operar y valido que sean correctos
                 bin1 = input(colorama.Fore.MAGENTA + "Ingrese el primer binario: " + colorama.Style.RESET_ALL)
                 while not validacion.es_binario(bin1):
@@ -124,7 +126,6 @@ def menu_operacion(texto_operacion: str):
                     resultado = suma_resta.suma_binaria(bin1, bin2)
                     if test_automatico(texto_operacion, bin1, bin2, resultado):
                         imprimir_resultado(texto_operacion, bin1, bin2, resultado)
-                        break
                 
                 elif (opcion == 2): # 2 -> resta
                     resultado = suma_resta.resta_binaria(bin1,bin2)
@@ -140,3 +141,5 @@ def menu_operacion(texto_operacion: str):
                     resultado = division_binaria(bin1,bin2)
                     if test_automatico(texto_operacion, bin1, bin2, resultado):
                         imprimir_resultado(texto_operacion, bin1, bin2, resultado)
+        elif opcion == 5: #Fin del programa
+            cuadro_colorido(texto_operacion, colorama.Fore.GREEN)
