@@ -1,7 +1,7 @@
 import colorama
 import validacion
 import suma_resta
-import div_multi
+from div_multi import *
 import os
 import time
 import conversores
@@ -90,12 +90,12 @@ def operacion_a_texto(opcion):
     elif (opcion == 4):
         return "Division"
     else:
-        return "Error"
+        return "Error. Usted ingresó una opción no válida."
 
 def menu_operacion(texto_operacion: str):
-    opcion = ""    
-    
-    
+    opcion = 1
+    opciones_validas = {1,2,3,4,5}  #Posibles opciones válidas de menú
+        
     while opcion != 5:
         cuadro_colorido(texto_operacion, colorama.Fore.GREEN)
         print(colorama.Fore.MAGENTA + "1. Suma.  " + colorama.Style.RESET_ALL)
@@ -104,80 +104,39 @@ def menu_operacion(texto_operacion: str):
         print(colorama.Fore.MAGENTA + "4. Division. " + colorama.Style.RESET_ALL)
         print(colorama.Fore.MAGENTA + "5. Salir. " + colorama.Style.RESET_ALL)
         linea_final(texto_operacion, colorama.Fore.GREEN)
+        #Consulto la opción deseada
         opcion = int(input())
+        #Devuelvo la opción como un string
         texto_operacion = operacion_a_texto(opcion)
         
-        if (opcion == 1):
-            
-            
-            bin1 = input(colorama.Fore.MAGENTA + "Ingrese el primer binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin1):
-                bin1 = input("Ingrese otro numero: \n")
+        #Si la opción ingresada está dentro de las posibles 
+        if opcion in opciones_validas:
                 
+                #Solicito los binarios a operar y valido que sean correctos
+                bin1 = input(colorama.Fore.MAGENTA + "Ingrese el primer binario: " + colorama.Style.RESET_ALL)
+                while not validacion.es_binario(bin1):
+                    bin1 = input("Ingrese otro numero: \n")
+                bin2 = input(colorama.Fore.MAGENTA + "Ingrese el segundo binario: " + colorama.Style.RESET_ALL)
+                while not validacion.es_binario(bin2):
+                    bin2 = input("Ingrese otro numero: \n")
             
-            bin2 = input(colorama.Fore.MAGENTA + "Ingrese el segundo binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin2):
-                bin2 = input("Ingrese otro numero: \n")
-            
-            resultado = suma_resta.suma_binaria(bin1, bin2)
-            if test_automatico(texto_operacion, bin1, bin2, resultado):
-                imprimir_resultado(texto_operacion, bin1, bin2, resultado)
-                break
-        elif (opcion == 2):
-                        
-            
-            bin1 = input(colorama.Fore.MAGENTA + "Ingrese el primer binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin1):
-                bin1 = input("Ingrese otro numero: \n")
-            
-            bin2 = input(colorama.Fore.MAGENTA + "Ingrese el segundo binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin2):
-                bin2 = input("Ingrese otro numero: \n")
-            
-            resultado = suma_resta.resta_binaria(bin1,bin2)
-            if test_automatico(texto_operacion, bin1, bin2, resultado):
-                imprimir_resultado(texto_operacion, bin1, bin2, resultado)
-        elif (opcion == 3):
-                        
-            
-            bin1 = input(colorama.Fore.MAGENTA + "Ingrese el primer binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin1):
-                bin1 = input("Ingrese otro numero: \n")
-            
-            bin2 = input(colorama.Fore.MAGENTA + "Ingrese el segundo binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin2):
-                bin2 = input("Ingrese otro numero: \n")
-            
-            resultado = "111010"
-            if test_automatico(texto_operacion, bin1, bin2, resultado):
-                imprimir_resultado(texto_operacion, bin1, bin2, resultado)
-        elif (opcion == 3):
-                        
-            
-            bin1 = input(colorama.Fore.MAGENTA + "Ingrese el primer binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin1):
-                bin1 = input("Ingrese otro numero: \n")
-            
-            bin2 = input(colorama.Fore.MAGENTA + "Ingrese el segundo binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin2):
-                bin2 = input("Ingrese otro numero: \n")
-            
-            resultado = div_multi.multiplicacion_binaria(bin1,bin2)
-            if test_automatico(texto_operacion, bin1, bin2, resultado):
-                imprimir_resultado(texto_operacion, bin1, bin2, resultado)
-        elif (opcion == 4):
-                        
-            
-            bin1 = input(colorama.Fore.MAGENTA + "Ingrese el primer binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin1):
-                bin1 = input("Ingrese otro numero: \n")
-            
-            bin2 = input(colorama.Fore.MAGENTA + "Ingrese el segundo binario: " + colorama.Style.RESET_ALL)
-            while not validacion.es_binario(bin2):
-                bin2 = input("Ingrese otro numero: \n")
-            
-            resultado = div_multi.division_binaria(bin1,bin2)
-            if test_automatico(texto_operacion, bin1, bin2, resultado):
-                imprimir_resultado(texto_operacion, bin1, bin2, resultado)
+                if (opcion == 1): # 1 -> suma
+                    resultado = suma_resta.suma_binaria(bin1, bin2)
+                    if test_automatico(texto_operacion, bin1, bin2, resultado):
+                        imprimir_resultado(texto_operacion, bin1, bin2, resultado)
+                        break
                 
-
+                elif (opcion == 2): # 2 -> resta
+                    resultado = suma_resta.resta_binaria(bin1,bin2)
+                    if test_automatico(texto_operacion, bin1, bin2, resultado):
+                        imprimir_resultado(texto_operacion, bin1, bin2, resultado)
+                
+                elif (opcion == 3): # 3 -> Multiplicación
+                    resultado = multiplicacion_binaria(bin1,bin2)
+                    if test_automatico(texto_operacion, bin1, bin2, resultado):
+                        imprimir_resultado(texto_operacion, bin1, bin2, resultado)
+                
+                elif (opcion == 4): # 4 -> Division
+                    resultado = division_binaria(bin1,bin2)
+                    if test_automatico(texto_operacion, bin1, bin2, resultado):
+                        imprimir_resultado(texto_operacion, bin1, bin2, resultado)
