@@ -141,3 +141,4 @@ def menu_operacion(texto_operacion: str):
                     imprimir_resultado(texto_operacion, bin1, bin2, resultado)
         elif opcion == 5: #Fin del programa
             cuadro_colorido(texto_operacion, colorama.Fore.GREEN)
+        texto_operacion = 'Seleccione que operacion quiere:'
