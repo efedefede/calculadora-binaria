@@ -18,10 +18,3 @@ def es_binario(cadena):
     # Nos devuelve verdadero si todos los valores del caracter fueron 0 o 1
 
 
-### TEST ###
-cadena = input("ingrese un numero binario: ")
-
-if es_binario(cadena):
-    print("Es un numero binario")
-else:
-    print("Es un numero binario")

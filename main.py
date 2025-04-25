@@ -1,19 +1,9 @@
-## Funciones Necesarias para la ejecución del programa 
-
-#Validación de número Binario
+import menu
 
 
-# Conversores
+def main():
+    menu.mostrar_bienvenida()
+    menu.menu_operacion("Seleccione que operacion quiere: \n")
 
-
-
-#Suma Binaria
-
-
-#Resta Binaria
-
-
-## Ejecución del programa principal
-
-
+main()
 

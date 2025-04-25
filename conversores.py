@@ -1,4 +1,4 @@
-def decimal_a_binario(decimal):
+def decimal_a_binario(decimal: int):
     """
     Convierte un número decimal entero a su representación binaria como string.
     
@@ -20,7 +20,7 @@ def decimal_a_binario(decimal):
         decimal = decimal // 2
     return binario
 
-def binario_a_decimal(binario):
+def binario_a_decimal(binario: str):
     """
     Convierte un número binario (como string) a su equivalente decimal.
     

@@ -1,4 +1,4 @@
-from .conversores import *
+import conversores
 # Multiplicación Binaria
 
 def multiplicacion_binaria (bin1: str, bin2: str):
@@ -15,9 +15,9 @@ def multiplicacion_binaria (bin1: str, bin2: str):
         '100'
     
     """
-    dec1 = int(binario_a_decimal(bin1))
-    dec2 = int(binario_a_decimal(bin2))
-    return decimal_a_binario(dec1*dec2)
+    dec1 = int(conversores.binario_a_decimal(bin1))
+    dec2 = int(conversores.binario_a_decimal(bin2))
+    return conversores.decimal_a_binario(dec1*dec2)
 
 # División binaria 
 
@@ -36,9 +36,9 @@ def division_binaria(bin1: str, bin2: str):
         '10'
     
     """
-    dec1 = int(binario_a_decimal(bin1))
-    dec2 = int(binario_a_decimal(bin2))
+    dec1 = int(conversores.binario_a_decimal(bin1))
+    dec2 = int(conversores.binario_a_decimal(bin2))
     if dec2 != 0 :
-        return decimal_a_binario(dec1//dec2)
+        return conversores.decimal_a_binario(dec1//dec2)
     else:
         return (f"ERROR: no se puede dividir por cero.")
