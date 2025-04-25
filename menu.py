@@ -134,12 +134,10 @@ def menu_operacion(texto_operacion: str):
                 
                 elif (opcion == 3): # 3 -> Multiplicación
                     resultado = multiplicacion_binaria(bin1,bin2)
-                    if test_automatico(texto_operacion, bin1, bin2, resultado):
-                        imprimir_resultado(texto_operacion, bin1, bin2, resultado)
+                    imprimir_resultado(texto_operacion, bin1, bin2, resultado)
                 
                 elif (opcion == 4): # 4 -> Division
                     resultado = division_binaria(bin1,bin2)
-                    if test_automatico(texto_operacion, bin1, bin2, resultado):
-                        imprimir_resultado(texto_operacion, bin1, bin2, resultado)
+                    imprimir_resultado(texto_operacion, bin1, bin2, resultado)
         elif opcion == 5: #Fin del programa
             cuadro_colorido(texto_operacion, colorama.Fore.GREEN)
